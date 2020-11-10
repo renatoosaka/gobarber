@@ -38,6 +38,7 @@
         }
       ],
       "prettier/prettier": "error",
+      "no-unused-expressions": "off",
       "no-use-before-define": "off",
       "import/prefer-default-export": "off",
       "camelcase": "off",
