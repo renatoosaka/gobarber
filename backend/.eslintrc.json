@@ -25,7 +25,8 @@
   "rules": {
     "camelcase": "off",
     "class-methods-use-this": "off",
-    "@typescript-esling/no-unused-vars": ["error", {
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
       "argsIgorePattern": "_"
     }],
     "import/extensions": [
