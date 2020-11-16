@@ -1,12 +1,13 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useEffect, useCallback, useRef } from 'react';
 import {
-  Image,
   View,
   ScrollView,
   KeyboardAvoidingView,
   Platform,
   TextInput,
   Alert,
+  Animated,
+  Keyboard,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
@@ -41,8 +42,57 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const passwordInputRef = useRef<TextInput>(null);
   const navigation = useNavigation();
+  const scale = useRef(new Animated.Value(1)).current;
+  const translateY = useRef(new Animated.Value(0)).current;
+
+  const AnimatedCreateAccountButton = Animated.createAnimatedComponent(
+    CreateAccountButton,
+  );
 
   const { signIn } = useAuth();
+
+  const handleKeyboardShow = useCallback(() => {
+    Animated.parallel([
+      Animated.timing(scale, {
+        toValue: 0.8,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+
+      Animated.timing(translateY, {
+        toValue: 54,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [scale, translateY]);
+
+  const handleKeyboardHide = useCallback(() => {
+    Animated.parallel([
+      Animated.timing(scale, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true,
+      }),
+
+      Animated.timing(translateY, {
+        toValue: 0,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+    ]).start();
+  }, [scale, translateY]);
+
+  useEffect(() => {
+    Keyboard.addListener('keyboardDidShow', handleKeyboardShow);
+
+    Keyboard.addListener('keyboardDidHide', handleKeyboardHide);
+
+    return () => {
+      Keyboard.removeListener('keyboardDidShow', handleKeyboardShow);
+      Keyboard.removeListener('keyboardDidHide', handleKeyboardHide);
+    };
+  }, [handleKeyboardHide, handleKeyboardShow]);
 
   const handleSignIn = useCallback(
     async (data: SignInFormData) => {
@@ -94,7 +144,12 @@ const SignIn: React.FC = () => {
           keyboardShouldPersistTaps="handled"
         >
           <Container>
-            <Image source={logoImg} />
+            <Animated.Image
+              source={logoImg}
+              style={{
+                transform: [{ scale }],
+              }}
+            />
 
             <View>
               <Title>Faça seu logon</Title>
@@ -133,10 +188,15 @@ const SignIn: React.FC = () => {
         </ScrollView>
       </KeyboardAvoidingView>
 
-      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+      <AnimatedCreateAccountButton
+        onPress={() => navigation.navigate('SignUp')}
+        style={{
+          transform: [{ translateY }],
+        }}
+      >
         <Icon name="log-in" size={20} color="#ff9000" />
         <CreateAccountText>Criar uma conta</CreateAccountText>
-      </CreateAccountButton>
+      </AnimatedCreateAccountButton>
     </>
   );
 };
