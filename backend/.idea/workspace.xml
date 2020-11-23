@@ -25,13 +25,24 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f878eda7-98f7-4143-94ea-46da2b20b72f" name="Default Changelist" comment="" />
+    <list default="true" id="f878eda7-98f7-4143-94ea-46da2b20b72f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Pull.Settings">
+    <option name="BRANCH" value="main" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="tdd" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JsFlowSettings">
@@ -72,6 +83,14 @@
       <updated>1606136046681</updated>
       <workItem from="1606136047704" duration="182000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: .idea workspace settings">
+      <created>1606153645095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606153645095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,21 +101,57 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: .idea workspace settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: .idea workspace settings" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1606153645009">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153645009" />
+    <state x="182" y="121" width="1536" height="879" key="DiffContextDialog" timestamp="1606154164242">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="182" y="121" width="1536" height="879" key="DiffContextDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606154164242" />
+    <state x="597" y="317" width="715" height="480" key="MultipleFileMergeDialog" timestamp="1606153678487">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="597" y="317" width="715" height="480" key="MultipleFileMergeDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153678487" />
     <state x="707" y="252" width="485" height="617" key="RollbackChangesDialog" timestamp="1606153569740">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="707" y="252" width="485" height="617" key="RollbackChangesDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153569740" />
-    <state x="464" y="188" width="992" height="737" key="SettingsEditor" timestamp="1606136230381">
+    <state x="464" y="188" width="992" height="737" key="SettingsEditor" timestamp="1606153872121">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="464" y="188" width="992" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606136230381" />
+    <state x="464" y="188" width="992" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153872121" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1606153712174">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153712174" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606153924295">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153924295" />
   </component>
 </project>
