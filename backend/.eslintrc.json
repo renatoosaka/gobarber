@@ -25,6 +25,8 @@
   ],
   "rules": {
     "camelcase": "off",
+    "no-underscore-dangle": "off",
+    "import/no-unresolved": "off",
     "class-methods-use-this": "off",
     "no-use-before-define": "off",
     "no-useless-constructor": "off",
