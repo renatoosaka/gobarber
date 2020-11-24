@@ -26,8 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f878eda7-98f7-4143-94ea-46da2b20b72f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/upload.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/upload.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/services/AuthenticateUserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/services/AuthenticateUserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/services/CreateUserService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/services/CreateUserService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modules/users/services/UpdateUserAvatarService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/modules/users/services/UpdateUserAvatarService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/container/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/container/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +44,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="tdd" />
+        <entry key="$PROJECT_DIR$/.." value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -71,7 +75,13 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/modules/appointments/repositories" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -82,6 +92,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606136046681</updated>
       <workItem from="1606136047704" duration="182000" />
+      <workItem from="1606216148107" duration="2305000" />
     </task>
     <task id="LOCAL-00001" summary="chore: .idea workspace settings">
       <created>1606153645095</created>
@@ -90,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606153645095</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="chore: .gitignore">
+      <created>1606154224948</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606154224948</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,13 +140,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: .idea workspace settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: .idea workspace settings" />
+    <MESSAGE value="chore: .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: .gitignore" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1606153645009">
+    <state x="768" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1606216626825">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153645009" />
+    <state x="768" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606216626825" />
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2" timestamp="1606154224736">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="554" y="114" width="802" height="886" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606154224736" />
     <state x="182" y="121" width="1536" height="879" key="DiffContextDialog" timestamp="1606154164242">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -145,13 +168,23 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="464" y="188" width="992" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153872121" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1606153712174">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1606154236129">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153712174" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606153924295">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606154236129" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1606216875775">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606153924295" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1606216875775" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/modules/appointments/repositories/fakes/FakeAppointmentsRepository.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
