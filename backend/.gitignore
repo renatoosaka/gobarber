@@ -6,3 +6,5 @@ tmp/*
 .vscode
 coverage
 yarn-*.log
+.env
+ormconfig.*
