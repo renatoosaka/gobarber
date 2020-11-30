@@ -16,16 +16,16 @@ import '@shared/container';
 
 const app = express();
 
-app.use(rateLimiter);
 app.use(express.json());
 app.use(cors());
+app.use('/files', express.static(uploadConfig.uploadFolder));
+app.use(rateLimiter);
+
 app.get('/', (request, response) => {
   return response.json({
     message: 'Hello World',
   });
 });
-
-app.use('/files', express.static(uploadConfig.uploadFolder));
 
 app.use(routes);
 
