@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiClock, FiPower } from 'react-icons/fi';
 
 import { useAuth } from '../../hooks/auth';
@@ -13,10 +13,14 @@ import {
   Content,
   Schedule,
   NextAppointment,
+  Section,
+  Appointment,
   Calendar,
 } from './styles';
 
 const Dashboard: React.FC = () => {
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
   const { user, signOut } = useAuth();
 
   return (
@@ -63,6 +67,59 @@ const Dashboard: React.FC = () => {
               </span>
             </div>
           </NextAppointment>
+
+          <Section>
+            <strong> Manhã </strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                08:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/28962479?s=460&u=e1b84c9b7549c0fb37763b57cf450cc17c4beccc&v=4"
+                  alt="Renato Osaka"
+                />
+                <strong>Renato Osaka</strong>
+              </div>
+            </Appointment>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                09:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/28962479?s=460&u=e1b84c9b7549c0fb37763b57cf450cc17c4beccc&v=4"
+                  alt="Renato Osaka"
+                />
+                <strong>Renato Osaka</strong>
+              </div>
+            </Appointment>
+          </Section>
+
+          <Section>
+            <strong> Tarde</strong>
+
+            <Appointment>
+              <span>
+                <FiClock />
+                13:00
+              </span>
+
+              <div>
+                <img
+                  src="https://avatars1.githubusercontent.com/u/28962479?s=460&u=e1b84c9b7549c0fb37763b57cf450cc17c4beccc&v=4"
+                  alt="Renato Osaka"
+                />
+                <strong>Renato Osaka</strong>
+              </div>
+            </Appointment>
+          </Section>
         </Schedule>
         <Calendar />
       </Content>
