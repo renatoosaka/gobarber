@@ -34,6 +34,7 @@
       "react/prop-types": "off",
       "prettier/prettier": "error",
       "no-use-before-define": "off",
+      "import/no-duplicates": "off",
       "@typescript-eslint/ban-types": "off",
       "react/jsx-props-no-spreading": "off",
       "react-hooks/rules-of-hooks": "error",
