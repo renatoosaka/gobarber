@@ -160,7 +160,7 @@ const Profile: React.FC = () => {
           });
       },
     );
-  }, [updateUser, user.id]);
+  }, [updateUser]);
 
   const handleGoBack = useCallback(() => {
     navigation.goBack();
@@ -238,7 +238,8 @@ const Profile: React.FC = () => {
                 placeholder="Nova senha"
                 returnKeyType="next"
                 onSubmitEditing={() =>
-                  passwordConfirmationInputRef.current?.focus()}
+                  passwordConfirmationInputRef.current?.focus()
+                }
               />
 
               <Input
