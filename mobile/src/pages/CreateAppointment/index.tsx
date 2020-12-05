@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
 
-import { Alert, Platform } from 'react-native';
+import { Alert } from 'react-native';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
+
+import Calendar from '../../components/Calendar';
 
 import {
   Container,
@@ -20,10 +21,8 @@ import {
   ProviderContainer,
   ProviderAvatar,
   ProviderName,
-  Calendar,
+  CalendarContainer,
   Title,
-  OpenDatePickerButton,
-  OpenDatePickerText,
   Schedule,
   Section,
   SectionContent,
@@ -38,6 +37,11 @@ export interface Provider {
   id: string;
   name: string;
   avatar_url: string;
+}
+
+interface MonthAvailabilityItem {
+  day: number;
+  available: boolean;
 }
 
 interface AvailabilityItem {
@@ -55,14 +59,34 @@ const CreateAppointment: React.FC = () => {
 
   const [selectedHour, setSelectedHour] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [currentMonth, setCurrentMonth] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [providers, setProviders] = useState<Provider[]>([]);
+  const [monthAvailability, setMonthAvailability] = useState<
+    MonthAvailabilityItem[]
+  >([]);
   const [availability, setAvailability] = useState<AvailabilityItem[]>([]);
   const [selectedProvider, setSelectedProvider] = useState(providerId);
 
   const { goBack, navigate } = useNavigation();
 
   const { user } = useAuth();
+
+  useEffect(() => {
+    api
+      .get<MonthAvailabilityItem[]>(
+        `/providers/${user.id}/month-availability`,
+        {
+          params: {
+            year: currentMonth.getFullYear(),
+            month: currentMonth.getMonth() + 1,
+          },
+        },
+      )
+      .then(response => {
+        setMonthAvailability(response.data);
+      });
+  }, [currentMonth, user.id]);
 
   useEffect(() => {
     api.get<Provider[]>('/providers').then(response => {
@@ -87,6 +111,10 @@ const CreateAppointment: React.FC = () => {
       });
   }, [selectedDate, selectedProvider]);
 
+  const handleMonthChange = useCallback((month: Date) => {
+    setCurrentMonth(month);
+  }, []);
+
   const navigateBack = useCallback(() => {
     goBack();
   }, [goBack]);
@@ -95,17 +123,9 @@ const CreateAppointment: React.FC = () => {
     setSelectedProvider(id);
   }, []);
 
-  const handleTogleDatePicker = useCallback(
-    () => setShowDatePicker(state => !state),
-    [],
-  );
-
-  const handleDateChange = useCallback((_: any, date: Date | undefined) => {
-    if (Platform.OS === 'android') {
-      setShowDatePicker(false);
-    }
-
-    date && setSelectedDate(date);
+  const handleDateChange = useCallback((date: Date) => {
+    setSelectedDate(date);
+    setSelectedHour(0);
   }, []);
 
   const handleSelectHour = useCallback((hour: number) => {
@@ -133,6 +153,21 @@ const CreateAppointment: React.FC = () => {
       );
     }
   }, [navigate, selectedDate, selectedHour, selectedProvider]);
+
+  const disabledDays = useMemo(
+    () =>
+      monthAvailability
+        .filter(monthDay => !monthDay.available)
+        .map(
+          monthDay =>
+            new Date(
+              currentMonth.getFullYear(),
+              currentMonth.getMonth(),
+              monthDay.day,
+            ),
+        ),
+    [currentMonth, monthAvailability],
+  );
 
   const morningAvailability = useMemo(
     () =>
@@ -189,23 +224,33 @@ const CreateAppointment: React.FC = () => {
           />
         </ProvidersListContainer>
 
-        <Calendar>
+        <CalendarContainer>
           <Title>Escolha a data</Title>
-
-          <OpenDatePickerButton onPress={handleTogleDatePicker}>
-            <OpenDatePickerText>Selecionar outra data</OpenDatePickerText>
-          </OpenDatePickerButton>
-
-          {showDatePicker && (
-            <DateTimePicker
-              textColor="#f4ede8"
-              display="calendar"
-              mode="date"
-              value={selectedDate}
-              onChange={handleDateChange}
-            />
-          )}
-        </Calendar>
+          <Calendar
+            showPastDate={false}
+            disableDays={{
+              weekDays: [0, 6],
+              days: disabledDays,
+            }}
+            weekNames={['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab']}
+            monthNames={[
+              'Janeiro',
+              'Fevereiro',
+              'Março',
+              'Abril',
+              'Maio',
+              'Junho',
+              'Julho',
+              'Agosto',
+              'Setembro',
+              'Outubro',
+              'Novembro',
+              'Dezembro',
+            ]}
+            onSelectDate={handleDateChange}
+            onMonthChange={handleMonthChange}
+          />
+        </CalendarContainer>
 
         <Schedule>
           <Title>Escolha o horário</Title>
