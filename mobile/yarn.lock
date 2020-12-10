@@ -758,9 +758,9 @@
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
 "@gobarber/react-native-calendar@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@gobarber/react-native-calendar/-/react-native-calendar-0.1.5.tgz#4e8d413854fdcf995df3327fa1477124c7f9aaaa"
-  integrity sha512-eiFJUbl6yfJGvCcnIO/4rBTFytxCYf2mkDadTk7+w+QFcgzgh9b4taFi1OpFe+416g3YNwpQUgTtiFsjASo1fQ==
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@gobarber/react-native-calendar/-/react-native-calendar-0.1.6.tgz#3cb478ddc73c216e06fddc55826acbc750c9d571"
+  integrity sha512-XdEo/mI5G3j/+8kQr3CX8X9OCysw/apYz99W0AykEs3NUsgmjE+7qBqUfT/52IIu5isCOWqwRVTAC7IsgnRXxQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
