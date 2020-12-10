@@ -2,12 +2,11 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Feather';
 import { format } from 'date-fns';
+import Calendar from '@gobarber/react-native-calendar';
 
 import { Alert } from 'react-native';
 import { useAuth } from '../../hooks/auth';
 import api from '../../services/api';
-
-import Calendar from '../../components/Calendar';
 
 import {
   Container,
@@ -60,7 +59,6 @@ const CreateAppointment: React.FC = () => {
   const [selectedHour, setSelectedHour] = useState(0);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [showDatePicker, setShowDatePicker] = useState(false);
   const [providers, setProviders] = useState<Provider[]>([]);
   const [monthAvailability, setMonthAvailability] = useState<
     MonthAvailabilityItem[]
@@ -146,7 +144,6 @@ const CreateAppointment: React.FC = () => {
 
       navigate('AppointmentCreated', { date: date.getTime() });
     } catch (err) {
-      console.log(err);
       Alert.alert(
         'Erro ao criar agendament',
         'Ocorreu um erro ao tentar criar agendamento. Tente novamente',
@@ -227,7 +224,28 @@ const CreateAppointment: React.FC = () => {
         <CalendarContainer>
           <Title>Escolha a data</Title>
           <Calendar
-            showPastDate={false}
+            colors={{
+              background: '#28262e',
+              header: {
+                background: '#3e3b47',
+                text: '#f4ede8',
+              },
+              day: {
+                enabled: {
+                  background: '#3e3b47',
+                  text: '#f4ede8',
+                },
+                disabled: {
+                  background: '#28262e',
+                  text: '#666360',
+                },
+                highlight: {
+                  background: '#ff9000',
+                  text: '#232129',
+                },
+              },
+            }}
+            enabledPastDate={false}
             disableDays={{
               weekDays: [0, 6],
               days: disabledDays,
